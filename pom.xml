@@ -35,6 +35,15 @@
                   <destFileName>webapp-runner.jar</destFileName>
                 </artifactItem>
               </artifactItems>
+              <!-- Web App information -->
+              <resourceGroup>CICDTomcatAppService</resourceGroup>
+              <appName>singlejava-webapp</appName>
+                        
+              <!-- Java Running Stack for Web App on Linux-->
+              <linuxRuntime>tomcat 9.0-jre8</linuxRuntime>
+
+              <!-- Deployment Type -->
+              <deploymentType>war</deploymentType>
             </configuration>
           </execution>
         </executions>
