@@ -12,10 +12,10 @@ stages:
   jobs: 
   - job: 'Build'
     displayName: 'Build job'
-pool:
-  vmImage: 'ubuntu-latest'
+  pool:
+    vmImage: 'ubuntu-latest'
 
-  steps:
+    steps:
     - task: Maven@3
       inputs:
         mavenPomFile: 'pom.xml'
@@ -31,7 +31,7 @@ pool:
           SourceFolder: '$(System.DefaultWorkingDirectory)'
           Contents: '**/target/*.?(war|jar)'
           TargetFolder: $(Build.ArtifactStagingDirectory)
-    
+
     - upload: $(Build.ArtifactStagingDirectory)
       artifact: drop
 
